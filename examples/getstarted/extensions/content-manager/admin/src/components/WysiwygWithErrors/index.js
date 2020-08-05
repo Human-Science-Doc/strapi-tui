@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 import { Label, InputDescription, InputErrors } from 'strapi-helper-plugin';
-import Editor from '../CKEditor';
+import CustomEditor from '../CKEditor';
 
 const WysiwygWithErrors = ({
   inputDescription,
@@ -29,7 +29,7 @@ const WysiwygWithErrors = ({
       }}
     >
       <Label htmlFor={name} message={label} style={{ marginBottom: 10 }} />
-      <Editor name={name} onChange={onChange} value={value} />
+      <CustomEditor name={name} onChange={onChange} value={value} />
       <InputDescription
         message={inputDescription}
         style={!isEmpty(inputDescription) ? { marginTop: '1.4rem' } : {}}

@@ -2963,7 +2963,14 @@
     "@testing-library/dom" "^7.2.2"
     "@types/testing-library__react" "^10.0.1"
 
-"@toast-ui/editor@^2.3.1":
+"@toast-ui/editor-plugin-code-syntax-highlight@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@toast-ui/editor-plugin-code-syntax-highlight/-/editor-plugin-code-syntax-highlight-1.0.0.tgz#61898e4f721c63bb28f59e470804b8e62ef9cbe4"
+  integrity sha512-GFC+aAMfEUALw38vo3daOHWF9IO6X7lByXk0WZ6Kr6Bgp8JwsrVwMYPzWReDK+vQqwO7EVmMDltJKYr1Mjo6kA==
+  dependencies:
+    highlight.js "^9.18.1"
+
+"@toast-ui/editor@2.3.1", "@toast-ui/editor@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@toast-ui/editor/-/editor-2.3.1.tgz#add692840011efcdbd9b4b6de93dda2da12c36a0"
   integrity sha512-0akQUnyCg24SBBb+weRX6VJ6ZjltxYEivBWOHft0birkrPF0YQgKjebPtFGPB9THBSUY+0qyr6k/KIN2rZqUog==
@@ -9237,12 +9244,17 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highlight.js@10.1.2:
+  version "10.1.2"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.1.2.tgz#c20db951ba1c22c055010648dfffd7b2a968e00c"
+  integrity sha512-Q39v/Mn5mfBlMff9r+zzA+gWxRsCRKwEMvYTiisLr/XUiFI/4puWt0Ojdko3R3JCNWGdOWaA5g/Yxqa23kC5AA==
+
 highlight.js@^10.1.1:
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.1.1.tgz#691a2148a8d922bf12e52a294566a0d993b94c57"
   integrity sha512-b4L09127uVa+9vkMgPpdUQP78ickGbHEQTWeBrQFTJZ4/n2aihWOGS0ZoUqAwjVmfjhq/C76HRzkqwZhK4sBbg==
 
-highlight.js@^9.12.0:
+highlight.js@^9.12.0, highlight.js@^9.18.1:
   version "9.18.3"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.3.tgz#a1a0a2028d5e3149e2380f8a865ee8516703d634"
   integrity sha512-zBZAmhSupHIl5sITeMqIJnYCDfAEc3Gdkqj65wC1lpI468MMQeeQkhcIAvk+RylAkxrCcI9xy9piHiXeQ1BdzQ==

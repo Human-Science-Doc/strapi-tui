@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import 'tui-editor/dist/tui-editor.css'; // editor's ui
+import 'tui-editor/dist/tui-editor-contents.css'; // editor's content
+import 'codemirror/lib/codemirror.css'; // codemirror
+import 'highlight.js/styles/github.css';
+import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
+import hljs from 'highlight.js';
+import Editor from '@toast-ui/editor';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -13,17 +18,30 @@ const Wrapper = styled.div`
   }
 `;
 
-const Editor = ({ onChange, name, value }) => {
+const CustomEditor = ({ onChange, name, value }) => {
+  let tuiEditor;
+
+  useEffect(() => {
+    tuiEditor = new Editor({
+      el: document.querySelector('#editSection'),
+      initialEditType: 'wysiwyg',
+      initialValue: value,
+      previewStyle: 'none',
+      useCommandShortcut: true,
+      height: '300px',
+      exts: ['colorSyntax'],
+      plugins: [[codeSyntaxHighlight, { hljs }]],
+      events: {
+        change: function() {
+          onChange({ target: { name, value: tuiEditor.getHtml() } });
+        },
+      },
+    });
+  }, []);
+
   return (
     <Wrapper>
-      <CKEditor
-        editor={ClassicEditor}
-        data={value}
-        onChange={(event, editor) => {
-          const data = editor.getData();
-          onChange({ target: { name, value: data } });
-        }}
-      />
+      <div id="editSection" />
     </Wrapper>
   );
 };
@@ -34,4 +52,4 @@ Editor.propTypes = {
   value: PropTypes.string.isRequired,
 };
 
-export default Editor;
+export default CustomEditor;
