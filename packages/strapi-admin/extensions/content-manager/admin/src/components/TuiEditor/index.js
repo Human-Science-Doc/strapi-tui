@@ -32,7 +32,7 @@ const CustomEditor = ({ onChange, name, value }) => {
       exts: ['colorSyntax'],
       plugins: [[codeSyntaxHighlight, { hljs }]],
       events: {
-        change: function() {
+        change() {
           onChange({ target: { name, value: tuiEditor.getHtml() } });
         },
       },

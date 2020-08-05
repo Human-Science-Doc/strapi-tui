@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 import { Label, InputDescription, InputErrors } from 'strapi-helper-plugin';
-import CustomEditor from '../CKEditor';
+import CustomEditor from '../TuiEditor';
 
 const WysiwygWithErrors = ({
   inputDescription,
